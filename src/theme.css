@@ -1,0 +1,56 @@
+/* =====================================================================
+   THEME: cream on dark jewel tones. A soft glowing backdrop changes colour on every page.
+   Each page sets a dark base plus three glowing colour clouds (--b1..3)
+   and two highlight colours (--hi, --hi2) used by headings and buttons.
+   To restyle a page, edit its line in the list at the bottom.
+   ===================================================================== */
+html,body{background:#07060f}
+body{--base:#0a0f24;--b1:#1d2b6b;--b2:#3a2466;--b3:#12305a;--hi:#FFF3DC;--hi2:#E6C79C;--gold:#EFD49A;--text:#FFF6E6;color:var(--text);background:var(--base);transition:background-color 1.2s}
+#root{position:fixed;inset:0}
+#stage{z-index:1}
+.page{background:transparent}
+
+#aurora{position:fixed;inset:0;overflow:hidden;z-index:0;pointer-events:none}
+#aurora i{position:absolute;width:78vmax;height:78vmax;border-radius:50%;filter:blur(70px);opacity:.75;transition:background-color 1.4s;will-change:transform}
+#aurora i:nth-child(1){background:var(--b1);left:-32vmax;top:-28vmax;animation:au1 19s ease-in-out infinite alternate}
+#aurora i:nth-child(2){background:var(--b2);right:-34vmax;top:8vmax;animation:au2 23s ease-in-out infinite alternate}
+#aurora i:nth-child(3){background:var(--b3);left:-14vmax;bottom:-38vmax;animation:au3 27s ease-in-out infinite alternate}
+#aurora::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,transparent 35%,rgba(0,0,0,.5) 100%)}
+@keyframes au1{to{transform:translate(24vmax,16vmax) scale(1.15)}}
+@keyframes au2{to{transform:translate(-22vmax,18vmax) scale(.85)}}
+@keyframes au3{to{transform:translate(20vmax,-20vmax) scale(1.2)}}
+
+/* headings: gradient ink instead of flat gold */
+h1.script:not(.shimmer),h2.script{background:linear-gradient(100deg,var(--hi2),#fffaf0 40%,var(--hi) 60%,var(--hi2));-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(0 2px 3px rgba(0,0,0,.55)) drop-shadow(0 0 16px rgba(0,0,0,.35));padding:0 .14em}
+.shimmer{background-image:linear-gradient(100deg,#D9B978 20%,#FFFAF0 45%,#F3E2C0 55%,#D9B978 80%);filter:drop-shadow(0 2px 3px rgba(0,0,0,.6)) drop-shadow(0 0 16px rgba(245,196,81,.45))}
+.lead,.tip{text-shadow:0 1px 10px rgba(0,0,0,.5)}
+
+/* buttons and chrome */
+.btn{background:linear-gradient(135deg,#FFFAF0,#F3E2C0 60%,var(--hi2));color:#2a1420;box-shadow:0 10px 28px -10px var(--hi2),inset 0 1px 0 rgba(255,255,255,.8)}
+.btn.ghost{background:rgba(255,255,255,.12);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.4);color:#fff;box-shadow:none}
+.btn.pinkb{background:linear-gradient(135deg,#F7D9D9,#D98C9A);color:#3a0f1c;box-shadow:0 10px 28px -10px #D98C9A}
+@keyframes pulse{50%{transform:scale(1.07);box-shadow:0 0 36px var(--hi2)}}
+#bar i{background:linear-gradient(90deg,var(--hi2),#FFFAF0);box-shadow:0 0 12px var(--hi2);transition:width .6s,background 1.2s}
+#plabel{color:var(--hi);transition:color 1.2s}
+#mute{background:rgba(255,255,255,.12);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.4);color:#fff}
+#prev{-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.3);font-size:22px}
+#l-in{border-color:var(--hi);background:rgba(255,255,255,.08);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+#l-in::placeholder{color:rgba(255,255,255,.45)}
+#j-c{color:var(--hi)!important}
+
+/* sparkles in three colours */
+#sparkles i{background:#FFF3DC;box-shadow:0 0 8px #FFF3DC}
+#sparkles i:nth-child(3n){background:#E8B4B8;box-shadow:0 0 8px #E8B4B8}
+#sparkles i:nth-child(3n+1){background:#EFD49A;box-shadow:0 0 8px #EFD49A}
+
+/* ---------- one colour story per page: dark base, three glow colours, cream (--hi) plus one soft tint (--hi2) ---------- */
+body[data-page="1"] {--base:#0a0f24;--b1:#1d2b6b;--b2:#3a2466;--b3:#12305a;--hi:#FFF3DC;--hi2:#E6C79C} /* home: midnight navy */
+body[data-page="2"] {--base:#1a0a1c;--b1:#5a1f4a;--b2:#7a3a2a;--b3:#2a1f5e;--hi:#FFF3DC;--hi2:#F0B8C0} /* about: rose plum */
+body[data-page="3"] {--base:#120a24;--b1:#3a1f6e;--b2:#5a1f5e;--b3:#1c2f6e;--hi:#FFF3DC;--hi2:#D6C1F5} /* scratch card: deep plum */
+body[data-page="4"] {--base:#24081a;--b1:#7a1f45;--b2:#8a3a2a;--b3:#4a1f5e;--hi:#FFF3DC;--hi2:#F0B8C0} /* instant camera: wine */
+body[data-page="8"] {--base:#22100f;--b1:#7a3a2a;--b2:#8a6a3a;--b3:#6a2440;--hi:#FFF3DC;--hi2:#F0C4A8} /* timeline: cocoa rose */
+body[data-page="10"]{--base:#071a14;--b1:#145a40;--b2:#6a5a1f;--b3:#12404a;--hi:#FFF3DC;--hi2:#CFE8C4} /* jar: forest emerald */
+body[data-page="12"]{--base:#260c1a;--b1:#8a2f5a;--b2:#8a4a2a;--b3:#4a2f7a;--hi:#FFF3DC;--hi2:#F5C6D6} /* cake: dark rose */
+body[data-page="13"]{--base:#06081a;--b1:#7a3a14;--b2:#1c2a6e;--b3:#4a1c5a;--hi:#FFF3DC;--hi2:#F2C79A} /* lanterns: night festival */
+body[data-page="14"]{--base:#160e09;--b1:#6a421a;--b2:#4a2418;--b3:#2e1c3a;--hi:#FFF3DC;--hi2:#E6C79C} /* letter: candlelight */
+body[data-page="15"]{--base:#1c0614;--b1:#4a1f6e;--b2:#8a1f45;--b3:#8a5a14;--hi:#FFF3DC;--hi2:#F2C08A} /* finale: wine and gold */
