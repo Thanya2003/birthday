@@ -36,18 +36,15 @@ export const CONFIG = {
     {text:'I have best memories with you in Kalyananagar...!!'}
   ],
   LIFE_WISHES: [                          // the wishes inside the jar (up to 10)
-    'May your cake be big, your problems be small, and your bank balance be huge!😂',
-    'May your Wi-Fi be strong and your Mondays be weak 📶',
-    'May you age like fine wine, not like milk 🍷',
-    'May every pizza you order come with extra cheese and zero regrets 🍕',
-    'May your phone battery always outlast your patience in traffic 🔋',
-    'May you stay young at heart, even when your knees disagree 😄',
+    'May life give you more reasons to laugh rather than overthinking with ur thoughts😇',
+    'May you age like fine wine🍷',
+    'May your life be filled with more adventures and ️fulfill all ur dreams 🌏',
+    'Stay strong, Be healthy, Be dreamy 😄',
     'May you always have someone to come home to (yes, that is me) ❤️'
   ],
   PROMISES: [                             // promises he makes to himself, one per sky lantern (6 fits best on a phone)
-    'I promise myself to chase my dreams, no matter how big',
-    'I promise myself to take care of my health and my heart',
-    'I promise myself to be kind to me on the hard days',
+    'I promise to never give up on myself',
+    'I promise myself to take care of my health and my family',
     'I promise myself more time with the people I love',
     'I promise myself to never stop learning and growing',
     'I promise myself to believe in me, always'
