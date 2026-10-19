@@ -54,7 +54,7 @@ export const CONFIG = {
   ],
   LETTER: [
     'My dearest Bharguuuu,',
-    'Happy birthday. I know ur spend today as ur best day in nepal..... Be safe and enjoy ur day😽😽',
+    'Happy birthday. I know ur spending today as ur best day in nepal..... Be safe and enjoy ur day😽😽',
     'Fulfill all ur dreams and wishes. I know u will figure out.....',
     'Thank you for coming into my life and give the best version of myself..... ',
     'I hope this year gives you everything you have been wishing for.',
